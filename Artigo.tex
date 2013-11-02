@@ -17,6 +17,7 @@
 \usepackage{enumerate}
 \usepackage{epigraph}
 \usepackage{abntcite}
+\usepackage{float}
 
 % Título do trabalho
 \title{Uso de métricas de software na quantificação dos custos de erros encontrados em um projeto real}
@@ -25,8 +26,7 @@
 \author{
 	Thiago Pelizoni \\
 	André Terceiro \\
-	Rodrigo Raminelli \\	
-	Pedro Antonio Saraiva Júnior	
+	Rodrigo Raminelli
 }
 
 \date{2013}
@@ -115,11 +115,74 @@ O projeto ao qual foi estudo de caso descrito neste artigo foi o de inscrição 
 
 O projeto citado havia sido criado em 2012 porém, passou por diversas modificações arquiteturais, visuais e melhorias em geral de modo a englobar novas regras de negócio bem como, correções de problemas identificado na versão anterior.
 
+\subsection{Testes}
+O projeto não conta com testes unitários. Os testes em sua maioria são efetuado pelos analistas de negócio do produto de maneira manual. Afim automatizar estes testes manuais, uma bateria de testes do sistema foram criados utilizando o Selenium IDE\footnote{Selenium IDE é um ambiente integrado de desenvolvimento para scripts de testes automatizados simulando o comportamento de um usuário.}. Desta forma, a cada nova funcionalidade criada ou, correção efetuada, estes testes são rodados pelo desenvolvedor. Todavia, os responsáveis pela homologação efetuam os testes manualmente.
+
 %AAAAA\cite{melhoria-processo-indicadores}
 \subsection{O processo de desenvolvimento}
 A empresa não segue uma metodologia de desenvolvimento de mercado, por exemplo, Scrum, RUP, etc. Trata-se de um desenvolvimento incremental onde, cada funcionalidade é especificada, desenvolvida, testada e colocada em produção.
 
+\subsubsection{Board do projeto}
 
+Como dito anteriormente, a empresa utiliza-se do Trello para o gerenciamento das atividades de um projeto. Cada projeto refere-se unica e exclusivamente a um board\footnote{O board de um projeto no Trello é o equivalente a Kanban online, conforme pode ser observado na figura "Board das tarefas do projeto".}, de modo a não misturar informações com outros projetos. Na figura a seguir podemos observar o board do projeto mencionado por este artigo.
+
+\begin{figure}[H]
+  \caption{Board das tarefas do projeto}
+  \centering 
+  \includegraphics[width=160mm,height=90mm]{images/board.png}
+\end{figure}
+
+Cada coluna do board representa um estágio da tarefa onde, este board está dividido em cinco colunas, sendo elas:
+
+\begin{itemize}
+	\item \textit{To do}: Refere-se a todas as tarefas que necessitam ser feitas. Primeiras tarefas da coluna possuem maior prioridade.
+	\item \textit{Doing}: Refere-se as tarefas que estão sendo feitas em um determinado momento. Cada programador pode ter apenas uma tarefa sendo feito em um dado momento. Quando algum item com maior prioridade, como por exemplo, um defeito em produção, o programador coloca sua tarefa novamente na coluna "To do", traz a tarefa que diz respeito ao problema para a coluna "Doing" e realiza a correção.
+	\item \textit{Done}: Refere-se as tarefas que foram concluídas. Estas tarefas, após testadas pelo desenvolvedor e evidenciadas que estão de acordo com o especificado, estarão aptas para serem homologadas por quem solicitou tal tarefa.
+	\item \textit{Homologação}: Referem-se as tarefas que encontram-se em ambiente de homologação sendo analizadas pelos solicitantes. Caso haja um problema, uma tarefa com o rótulo de "Correção" será criado na coluna "To do", e passará pelo processo descrito anteriormente. Caso as tarefas estejam de acordo, estas estarão áptas para irem para a produção.
+	\item \textit{Produção}: Referem-se as tarefas que foram homologadas pelos solicitantes, geralmente, os analistas de negócios. Quando um problema em produção é encontrado, a tarefa criada faz referência a tarefa na coluna de produção, afim de manter um histórico.
+\end{itemize}
+
+\subsubsection{Tarefas}
+
+Toda e qualquer nova tarefa, seja uma nova funcionalidade, alteração ou correção de bugs encontrados, independente do ambiente ao qual este se encontra, é gerado um card\footnote{Um card nada mais é do que uma tarefa dentro do board do Trello.} no Trello.
+
+\begin{figure}[H]
+  \caption{Uma tarefa do projeto}
+  \centering 
+  \includegraphics[width=150mm,height=180mm]{images/card.png}
+\end{figure}
+
+Como pode ser observado acima, uma tarefa segue uma estrutura básica:
+\begin{itemize}
+	\item \textit{Título}: Uma breve descrição da tarefa a ser realizada.
+	\item \textit{Descrição}: Uma descrição detalhada da tarefa a ser realizada.
+	\item \textit{Rótulo}: Qual é o tipo da tarefa.
+	\item \textit{Membros}: Quem é o responsável por esta tarefa. Pode haver mais de uma pessoa dependendo do caso, por exemplo, um desenvolvedor e um analista de negócios.
+	\item \textit{Checklist}: Quais os passos necessários para a conclusão da tarefa, afim de mensurar em quantos por cento esta atividade se encontra quando em execução.
+	\item \textit{Anexos}: Evidências de que a funcionalidade ou as correções estão de acordo com o especificado. Em grande parte dos casos são screenshots.
+\end{itemize}
+
+\subsubsection{Rótulo para as tarefas}
+
+Cada tarefa possui um rótulo, de modo a ficar mais fácil identificar o que cada tarefa é através de cores. Desta forma, ao olhar o board de modo geral, através dessas cores é possível identificar e reordenar as tarefas de acordo com sua prioridade de maneira mais fácil.
+
+\begin{figure}[H]
+  \caption{Rótulos das tarefas}
+  \centering 
+  \includegraphics{images/labels.png}
+\end{figure}
+
+Como pode ser observado na imagem acima, atualmente, as tarefas podem ser de quatro tipos diferentes:
+
+\begin{itemize}
+	\item \textit{Novo}: Refere-se a alguma nova funcionalidade na aplicação.
+	\item \textit{Correção}: Refere-se a correção de algum problema identificado no processo de homologação de uma funcionalidade, por exemplo, se uma funcionalidade foi implementada porém, ao verificá-la constatou-se um problema, um card com este rótulo será aberto para a devida correção.
+	\item \textit{Alteração}: Refere-se a alteração de alguma funcionalidade na aplicação.
+	\item \textit{Bug}: Refere-se a um problema encontrado em ambiente de produção. Geralmente estas tarefas em mais prioridade do que as demais.
+\end{itemize}
+
+\subsection{Indicadores}
+Conforme descrito o processo de desenvolvimento onde, todas as informações referente ao projeto encontram-se na ferramenta Trello, será feita uma minuciosa investigação afim de levantar todos os defeitos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 3. Resultados – o que foi observado?
