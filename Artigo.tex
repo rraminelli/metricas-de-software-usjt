@@ -112,7 +112,7 @@ Tendo por base as informações anteriormente citadas, o objetivo deste trabalho
 Nesta sessão iremos descrever quais foram as tecnologias utilizadas no desenvolvimento do projeto, o processo de testes e homologação, qual o procedimento utilizado para reportar erros e consertá-los.
 
 \subsection{O projeto}
-O projeto ao qual foi estudo de caso descrito neste artigo foi o de inscrição dos participantes da corrida de Sao Silvestre 2013 desenvolvido pela Fundação Casper Líbero. Este serviu como estudo de caso conta com mais de 150.000 linhas de de código. A linguagem de programação utilizada é PHP\footnote{PHP é uma linguagem de programação interpretada, livre, usada originalmente apenas para o desenvolvimento de aplicações server-side, capazes de gerar conteúdo dinâmico na Web.} na versão 5.3.18, Zend Framework 1.12\footnote{Zend Framework é um framework para aplicações Web de código aberto implementado em PHP 5 completamente orientado a objetos,  licenciado sob a New BSD License.}, banco de dados Oracle\footnote{Oracle é um SGBD (sistema gerenciador de banco de dados)}, controlador de versão Git\footnote{Git é um sistema de controle de versão distribuído projetado e desenvolvido por Linus Torvalds.} e o Trello\footnote{Trello é um organizador de tarefas e eventos bastante dinâmico e funcional, bastante utilizado para gerenciar projetos com a metodologia Scrum.} para gerenciamento das atividades.
+O projeto ao qual foi estudo de caso descrito neste artigo foi o de inscrição dos participantes da corrida de Sao Silvestre 2013 desenvolvido pela Fundação Casper Líbero. Este serviu como estudo de caso conta com mais de 150.000 linhas de de código. A linguagem de programação utilizada é PHP\footnote{PHP é uma linguagem de programação interpretada, livre, usada originalmente apenas para o desenvolvimento de aplicações server-side, capazes de gerar conteúdo dinâmico na Web.} na versão 5.3.18, Zend Framework 1.12\footnote{Zend Framework é um framework para aplicações Web de código aberto implementado em PHP 5 completamente orientado a objetos,  licenciado sob a New BSD License.}, banco de dados Oracle, controlador de versão Git\footnote{Git é um sistema de controle de versão distribuído projetado e desenvolvido por Linus Torvalds.} e o Trello\footnote{Trello é um organizador de tarefas e eventos bastante dinâmico e funcional, bastante utilizado para gerenciar projetos com a metodologia Scrum.} para gerenciamento das atividades.
 
 O projeto citado havia sido criado em 2012 porém, passou por diversas modificações arquiteturais, visuais e melhorias em geral de modo a englobar novas regras de negócio bem como, correções de problemas identificado na versão anterior.
 
@@ -185,6 +185,8 @@ Como pode ser observado na imagem acima, atualmente, as tarefas podem ser de qua
 \subsection{Indicadores}
 Conforme descrito no processo de desenvolvimento, todas as informações referente ao gerenciamento do projeto encontram-se na ferramenta Trello. Todavia, há alguns meses, o responsável pela equipe de desenvolvimento foi desligado da empresa e, uma enorme quantidade de informações do projeto São Silvestre foi perdido contendo toda a base histórica do projeto do ano de 2012 e uma boa quantidade das informações do projeto de 2013 pois, o board do projeto estava atrelado a conta pessoal deste funcionário e não da empresa. 
 
+Uma tarefa pode conter um ou vários commits para sua conclusão. Isto muitas vezes deve-se a complexidade da mesma. Para toda e qualquer tarefa, um novo \textit{branch} é criado afim de isolar ela da linha principal enquanto tal funcionalidade não estiver homologada afim de fazer parte da linha principal da aplicação, o branch \textit{master}.
+
 Desta forma, além do board do projeto São Silvestre atual, o histórico de commits do repositório do projeto no BitBucket\footnote{BitBucket é um serviço gratuito de hospedagem de projetos de software que utilizam Git ou Mercurial como controle de versão. https://bitbucket.org/} será utilizado afim de levantar informações precisas para este trabalho, desde de o começo do desenvolvimento deste até sua versão mais atual, \textbf{2.4.0}.
 
 Portanto, o intuito deste tratalho é fazer uma minuciosa investigação afim de quantificar todos os defeitos encontrados, qualificá-los de acordo com a etapa do processo, seja em homologação ou produção, quantificar as horas gastas para corrigir o problema, qualificar essas horas de acordo com os profissionais envolvidos de modo a descobrir o total gasto com estes problemas a fim de evidenciar o quanto um investimento em uma melhoria do processo de desenvolvimento, a partir da aplicação de testes unitários e integração contínua seria econômico para a empresa.
@@ -193,13 +195,35 @@ Portanto, o intuito deste tratalho é fazer uma minuciosa investigação afim de
 % 3. Resultados – o que foi observado?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
-Resultados, o que foi observado
+Através de uma minuciosa análise do repositório do projeto, entre o período de 17/04/2012 até 13/11/2013 foram encontrado 176 tarefas categorizadas entre \textit{alterações}, \textit{correções} e \textit{bugs}, estando eles divididos da seguinte forma:
+
+\begin{itemize}
+	\item Alterações: 39 incidências encontradas
+	\item Correções: 98 incidências encontradas
+	\item Bugs: 39 incidências encontradas
+\end{itemize}
+
+A partir dessas informações, foi criado um gráfico de modo a visualizar qual é a porcentagem de cada categoria de incidências encontradas:
+
+\begin{figure}[H]
+  \caption{Métricas encontradas}
+  \centering 
+  \includegraphics{images/graphic.png}
+\end{figure}
+\cite{metricas-sao-silvestre}
+
+\subsection{Estivativa de valor das incidências}
+Aqui será estimado o valor gasto por cada um dos problemas e posteriormente o valor total.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. Considerações finais - o que se pode concluir dos resultados?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}
-Considerações finais, o que se pode concluir dos resultados?
+Com base nos fatos citados, podemos observar que, 
+
+O número alto de alterações pode ser reflexo da especificação onde, por parte dos analistas de negócios.
+
+ na figura anterior, o total de incidências de correções é mais que o dobro de alterações e bugs.
 
 % Faz a criação das referências bibliográficas
 \bibliography{Bibliografia}
