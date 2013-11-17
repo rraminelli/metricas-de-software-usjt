@@ -18,6 +18,7 @@
 \usepackage{epigraph}
 \usepackage{abntcite}
 \usepackage{float}
+\usepackage{amsmath}
 
 % Título do trabalho
 \title{Uso de métricas de software na quantificação dos custos de erros encontrados em um projeto real}
@@ -187,7 +188,7 @@ Conforme descrito no processo de desenvolvimento, todas as informações referen
 
 Uma tarefa pode conter um ou vários commits para sua conclusão. Isto muitas vezes deve-se a complexidade da mesma. Para toda e qualquer tarefa, um novo \textit{branch} é criado afim de isolar ela da linha principal enquanto tal funcionalidade não estiver homologada afim de fazer parte da linha principal da aplicação, o branch \textit{master}.
 
-Desta forma, além do board do projeto São Silvestre atual, o histórico de commits do repositório do projeto no BitBucket\footnote{BitBucket é um serviço gratuito de hospedagem de projetos de software que utilizam Git ou Mercurial como controle de versão. https://bitbucket.org/} será utilizado afim de levantar informações precisas para este trabalho, desde de o começo do desenvolvimento deste até sua versão mais atual, \textbf{2.4.0}.
+Desta forma, além do board do projeto São Silvestre atual, o histórico de commits do repositório do projeto no BitBucket\footnote{BitBucket é um serviço gratuito de hospedagem de projetos de software que utilizam Git ou Mercurial como controle de versão. https://bitbucket.org/} será utilizado afim de levantar informações precisas para este trabalho, desde de o começo do desenvolvimento deste até sua versão mais atual \textbf{2.4.0}.
 
 Portanto, o intuito deste tratalho é fazer uma minuciosa investigação afim de quantificar todos os defeitos encontrados, qualificá-los de acordo com a etapa do processo, seja em homologação ou produção, quantificar as horas gastas para corrigir o problema, qualificar essas horas de acordo com os profissionais envolvidos de modo a descobrir o total gasto com estes problemas a fim de evidenciar o quanto um investimento em uma melhoria do processo de desenvolvimento, a partir da aplicação de testes unitários e integração contínua seria econômico para a empresa.
 
@@ -236,15 +237,25 @@ O administrador de sistemas, irá atualizar ambos os ambientes, ou seja, quando 
 Deste modo, com base em uma média de base histórica, a estimativa para cada profissional será:
 
 \begin{itemize}
-	\item \textit{Programador}: 5 horas
-	\item \textit{Analista / Testador}: 3 horas
-	\item \textit{Administrador de Sistemas}: 2 horas
+	\item \textbf{Programador}: 5 horas
+	\item \textbf{Analista / Testador}: 3 horas
+	\item \textbf{Administrador de Sistemas}: 2 horas
 \end{itemize}
 
-
 \subsubsection{Valor por hora de cada profissional}
+De modo a calcular o valor destes profissionais, será utilizado a média salarial entre 2012 e 2013 pago pela empresa responsável pelo projeto. O método utilizado para se obter o valor hora de cada profissional é resultado da seguinte fórmula: 
 
+\begin{itemize}
+  \item[] \textbf{$\text{Valor Hora}=\frac{\text{Valor Base} / 30}{8}$}
+\end{itemize}
 
+Desta forma, temos a partir da média do salário base o valor hora de cada profissional:
+
+\begin{itemize}
+	\item \textbf{Programador}: Salário base: R\$ 4.300,00, salário hora: R\$ 17,92.
+	\item \textbf{Analista / Testador}: Salário base: R\$ 5.500,00, salário hora: R\$ 22,92.
+	\item \textbf{Administrador de Sistemas}: Salário base: R\$ 6.700,00, salário hora: R\$ 27,92.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. Considerações finais - o que se pode concluir dos resultados?
