@@ -195,7 +195,7 @@ Portanto, o intuito deste tratalho é fazer uma minuciosa investigação afim de
 % 3. Resultados – o que foi observado?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
-Através de uma minuciosa análise do repositório do projeto, entre o período de 17/04/2012 até 13/11/2013 foram encontrado 176 tarefas categorizadas entre \textit{alterações}, \textit{correções} e \textit{bugs}, estando eles divididos da seguinte forma:
+Através de uma minuciosa análise do repositório do projeto, entre o período de 17/04/2012 até 13/11/2013 foram encontrado 176 incidências categorizadas como \textit{alterações}, \textit{correções} e \textit{bugs}, estando eles divididos da seguinte forma:
 
 \begin{itemize}
 	\item Alterações: 39 incidências encontradas
@@ -213,7 +213,38 @@ A partir dessas informações, foi criado um gráfico de modo a visualizar qual 
 \cite{metricas-sao-silvestre}
 
 \subsection{Estivativa de valor das incidências}
-Aqui será estimado o valor gasto por cada um dos problemas e posteriormente o valor total.
+Afim de estimar o valor de cada incidência, as seguinte premissas serão adotadas:
+
+\subsubsection{Número de profissionais}
+O número de profissionais para cada incidência, independente qual seu tipo, será de 3 (três) profissionais, sendo eles:
+
+\begin{itemize}
+	\item \textit{Programador}: Profissional que realizará a tarefa de correção da incidência encontrada.
+	\item \textit{Analista / Testador}: Profissional que irá homologar se a tarefa foi realizada da maneira correta.
+	\item \textit{Administrador de Sistemas}: Profissional responsável por atualizar tanto o ambiente de homologação quanto de produção.
+\end{itemize}
+
+\subsubsection{Horas gastas por cada profissional}
+Cada incidência, independente de seu tipo, pode carregar em si uma intrínseca complexidade pois, em muitos casos, os fatores ou dados necessários  para a reprodução do problema são mais complexos de se obter ou simular do que muitas vezes corrigir o problema priopriamente dito.
+
+O programador, com base nas informações de uma incidência, reunir dados para a reprodução, corrigir e evidênciar que essas correções estão de acordo com o comportamento adequado para a funcionalidade proposta.
+
+O analista ou testador, a partir dos dados disponíveis para a reprodução do problema irá verificar a correção realizada, em caso de aprovação, irá para o ambiente de produção, caso contrário, uma nova tarefa será criada para corrigí-la.
+
+O administrador de sistemas, irá atualizar ambos os ambientes, ou seja, quando o programador disponibilizar a correção, esta primeiramente será aplicada em ambiente de homologação e, posteriormente, em produção.
+
+Deste modo, com base em uma média de base histórica, a estimativa para cada profissional será:
+
+\begin{itemize}
+	\item \textit{Programador}: 5 horas
+	\item \textit{Analista / Testador}: 3 horas
+	\item \textit{Administrador de Sistemas}: 2 horas
+\end{itemize}
+
+
+\subsubsection{Valor por hora de cada profissional}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. Considerações finais - o que se pode concluir dos resultados?
