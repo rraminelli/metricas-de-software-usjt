@@ -327,22 +327,24 @@ Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$
 % 4. Considerações finais - o que se pode concluir dos resultados?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}
-Com base nos fatos citados, podemos observar que o alto número de incidências encontradas através de análise do repositório, bem como do board de gerenciamento do projeto, evidencia que o uso de uma ferramenta como bugtracker seria mais eficaz para gerenciar este tipo de informação.
+Com base nos fatos citados, podemos observar que o alto número de incidências encontradas através de análise do repositório, bem como do board de gerenciamento do projeto, evidencia que o uso de uma ferramenta como bugtracker seria mais eficaz para gerenciar este tipo de informação e também, afim de facilitar a obteção de futuras métricas concernente a este projeto.
 
-O custo dos bugs e correções somados é equivalente a 4 meses de salário bruto de um programador da empresa no período citado.
+O custo dos bugs e correções somados é equivalente a 4 meses de salário bruto de um programador da empresa no período citado. 
 
+A implementação de testes unitários faria com que o número de correções encontrado em futuras medições fosse drasticamente menor bem como, seria um fator primordial para a implementação de um processo de integração contínua na empresa.
 
-- Avaliar a forma como as medidas foram extraídas e comentar sobre as vantagens (mais rápido, mais preciso) e desvantagens (treinamento inicial no uso da ferramenta) de usar um bugtracker em vez de extrair as medidas analisando o repositório.
-- Foi criada uma base para comparação: agora é possível em outros projetos da FCL ter uma base de comparação, por exemplo: alterações/kloc, correções/kloc, bugs/kloc. Então, nos projetos seguintes pode ser medido também o número de bugs/kloc e comparado com o valor da São Silvestre;
-- Do do total de problemas (138 = correções + bugs), 28,2\% são detectados em produção: (bugs) / (correções + bugs) = 39 / 138 = .282 . Independente de ser possível aplicar ou não na FCL, isto indica que deve-se pensar em montar uma equipe independente de testes ou no mínimo treinar melhor as pessoas que fazem os testes atualmente.
+O uso de integração contínua na empresa faria com que o processo de deploy que, atualmente demora em torno de 2 horas fosse diminuido para em alguns meros minutos, tirando o fator humano interente ao procedimento. Desta forma, o tempo estimado gasto pelos administradores de sistema com o deploy das 176 incidências foram de 352 horas com um custo de R\$ 9.827,84 seria a economia que teríamos para a empresa com tal implementação.
+
+As incidências referente a bugs e correções encontradas evidenciam que a necessidade de uma necessidade de melhor treinamento aos responsáveis pela execução dos testes atualmente ou, a criação de uma equipe independente para tal, visto que, o testador é o próprio analista de negócio, que não possui esta especialidade.
 
 \subsection{Trabalhos Futuros}
-- Rascunhar brevemente um cálculo de como o Jenkins compensaria para a empresa (independente se questões internas da FCL deixam a aplicação disto na prática), indicando que isto pode ser analisado com mais detalhes em um trabalho futuro. Este "rascunho breve", no meu ponto de vista, não seria complexo. O trabalho do administrador de sistemas, pelo que entendi, é de um Jenkins manual. Ele leva 2 horas para fazer. Alguem apertar um botão no Jenkins levaria 5 minutos (precisaríamos conseguir evidências deste tempo por referências bibliográficas). Logo economizamos 115 minutos por ocorrência. Podemos citar "por cima" os investimentos: instalação do Jenkins, treinamento etc, configuração em cada projeto, indicando que é promissor e que em outro trabalho pode ser feito um estudo mais aprofundado;
-- Comentar (sem detalhar) sobre a comparação do número de correções, bugs e alterações com valores do mercado ou da literatura, para avaliar se os números da FCL estão melhores, iguais ou piores. Podemos citar que a comparação via bugs/kloc, alteracoes/kloc, correções/kloc, para projetos com grandes diferenças (linguagem de programação, desktop x web etc) pode gerar resultados imprecisos \cite{loc-metric} \cite{bugs-loc} e que um estudo cuidadoso deve ser feito para chegar-se a um valor que realmente sirva como base para comparação;
-- Comentar que um trabalho futuro poderia quantificar o quanto um investimento em mais testes evitaria um custo maior de erros em produção \cite{defect-origin-removal}
-- Pode-se detalhar os motivos das correções (itens não especificados? Erro do desenvolvedor? Ambiguidade na especificação?) para saber melhor futuramente em que pontos pode-se agir para colher mais resultados
+Este trabalho poderia ser repetido futuramente com a aplicação das melhorias propostas sugeridas na conclusão deste trabalho afim de levantar novas métricas evidenciando as conclusões obtidas.
 
+Caracterizar as incidências de correções de modo a identificar se esta foi decorrente de falha do desenvolvedor ou problemas de especificação, algo muito recorrente no início do projeto.
 
+Comparar o valor do investimento da implementação dos testes unitários e integração contínua com relação ao valor total das incidências encontradas neste trabalho pela falta destes.\cite{defect-origin-removal}
+
+Fazer uma comparação sobre do número de incidências com valores do mercado ou da literatura, para avaliando com os números da aqui encontrados. Podemos citar que a comparação via incidências/kloc, para projetos com grandes diferenças de linguagem de programação e plataforma, podem gerar resultados imprecisos \cite{loc-metric} \cite{bugs-loc} e que um estudo cuidadoso deve ser feito para chegar-se a um valor que realmente sirva como base para comparação entre eles.
 
 % Faz a criação das referências bibliográficas
 \bibliography{Bibliografia}
