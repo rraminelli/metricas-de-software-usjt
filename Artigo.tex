@@ -327,7 +327,22 @@ Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$
 % 4. Considerações finais - o que se pode concluir dos resultados?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}
-Com base nos fatos citados, podemos observar que...
+Com base nos fatos citados, podemos observar que o alto número de incidências encontradas através de análise do repositório, bem como do board de gerenciamento do projeto, evidencia que o uso de uma ferramenta como bugtracker seria mais eficaz para gerenciar este tipo de informação.
+
+O custo dos bugs e correções somados é equivalente a 4 meses de salário bruto de um programador da empresa no período citado.
+
+
+- Avaliar a forma como as medidas foram extraídas e comentar sobre as vantagens (mais rápido, mais preciso) e desvantagens (treinamento inicial no uso da ferramenta) de usar um bugtracker em vez de extrair as medidas analisando o repositório.
+- Foi criada uma base para comparação: agora é possível em outros projetos da FCL ter uma base de comparação, por exemplo: alterações/kloc, correções/kloc, bugs/kloc. Então, nos projetos seguintes pode ser medido também o número de bugs/kloc e comparado com o valor da São Silvestre;
+- Do do total de problemas (138 = correções + bugs), 28,2\% são detectados em produção: (bugs) / (correções + bugs) = 39 / 138 = .282 . Independente de ser possível aplicar ou não na FCL, isto indica que deve-se pensar em montar uma equipe independente de testes ou no mínimo treinar melhor as pessoas que fazem os testes atualmente.
+
+\subsection{Trabalhos Futuros}
+- Rascunhar brevemente um cálculo de como o Jenkins compensaria para a empresa (independente se questões internas da FCL deixam a aplicação disto na prática), indicando que isto pode ser analisado com mais detalhes em um trabalho futuro. Este "rascunho breve", no meu ponto de vista, não seria complexo. O trabalho do administrador de sistemas, pelo que entendi, é de um Jenkins manual. Ele leva 2 horas para fazer. Alguem apertar um botão no Jenkins levaria 5 minutos (precisaríamos conseguir evidências deste tempo por referências bibliográficas). Logo economizamos 115 minutos por ocorrência. Podemos citar "por cima" os investimentos: instalação do Jenkins, treinamento etc, configuração em cada projeto, indicando que é promissor e que em outro trabalho pode ser feito um estudo mais aprofundado;
+- Comentar (sem detalhar) sobre a comparação do número de correções, bugs e alterações com valores do mercado ou da literatura, para avaliar se os números da FCL estão melhores, iguais ou piores. Podemos citar que a comparação via bugs/kloc, alteracoes/kloc, correções/kloc, para projetos com grandes diferenças (linguagem de programação, desktop x web etc) pode gerar resultados imprecisos \cite{loc-metric} \cite{bugs-loc} e que um estudo cuidadoso deve ser feito para chegar-se a um valor que realmente sirva como base para comparação;
+- Comentar que um trabalho futuro poderia quantificar o quanto um investimento em mais testes evitaria um custo maior de erros em produção \cite{defect-origin-removal}
+- Pode-se detalhar os motivos das correções (itens não especificados? Erro do desenvolvedor? Ambiguidade na especificação?) para saber melhor futuramente em que pontos pode-se agir para colher mais resultados
+
+
 
 % Faz a criação das referências bibliográficas
 \bibliography{Bibliografia}
