@@ -198,9 +198,9 @@ Desta forma, além do board do projeto São Silvestre atual, o histórico de com
 A técnica \textit{Goal Question Metrics} consiste em um método simples para planejar medições de forma que estas sejam baseadas em objetivos específicos. Portanto, iremos descrever quais foram os objetivos dessas medições bem como, iremos discorrer a respeito dos resultados encontrados.
 
 \subsection{Objetivo}
-Analisar as estimativas do projeto de inscrição dos participantes da Corrida de São Silvestre com o propósito de quantificar todos os defeitos encontrados, qualificá-los de acordo com a etapa do processo, seja em homologação ou produção, com respeito a quantificar as horas gastas para corrigir o problema, qualificar essas horas de acordo com os profissionais envolvidos de modo a descobrir o total gasto com estes problemas a fim de evidenciar o quanto um investimento em uma melhoria do processo de desenvolvimento, a partir da aplicação de testes unitários e integração contínua seria econômico para a empresa no contexto de desenvolvimento de software.
+Analisar o histórico do projeto de inscrição dos participantes da Corrida de São Silvestre com o propósito de quantificar todos os defeitos encontrados, qualificá-los de acordo com a etapa do processo, seja em homologação ou produção, com respeito a quantificar as horas gastas para corrigir o problema, qualificar essas horas de acordo com os profissionais envolvidos de modo a descobrir o total gasto com estes problemas a fim de evidenciar o quanto um investimento em uma melhoria do processo de desenvolvimento, a partir da aplicação de testes unitários e integração contínua seria econômico para a empresa no contexto de desenvolvimento de software.
 
-\subsection{Questão 1}\label{sec:questao-1}
+\subsection{Questão 1}
 Qual é o número de incidências encontradas desde o início do projeto até a versão mais atual?
 
 \subsubsection{Resposta}
@@ -208,7 +208,7 @@ Através de uma minuciosa análise do repositório do projeto, entre o período 
 
 \newcommand{\alteracoes}{39}
 \newcommand{\correcoes}{98}
-\newcommand{\bugs}{98}
+\newcommand{\bugs}{39}
 
 \begin{itemize}
 	\item \textbf{Alterações}: \alteracoes~incidências encontradas
@@ -216,7 +216,7 @@ Através de uma minuciosa análise do repositório do projeto, entre o período 
 	\item \textbf{Bugs}: \bugs~incidências encontradas
 \end{itemize}
 
-\subsection{Questão 2}\label{sec:questao-2}
+\subsection{Questão 2}
 Qual é o percentual de cada incidência de acordo com a sua categoria?
 
 \subsubsection{Resposta 2}
@@ -240,13 +240,13 @@ O número mínimo de profissionais para a resolução cada incidência, independ
 	\item \textit{Administrador de Sistemas}: Profissional responsável por atualizar tanto o ambiente de homologação quanto de produção.
 \end{itemize}
 
-\subsection{Questão 4}\label{sec:questao-4}
+\subsection{Questão 4}
 Qual é o número de horas gasta por cada profissional envolvido no processo para a resolução de uma incidência?
 
 \subsubsection{Resposta 4}
 Cada incidência, independente de seu tipo, pode carregar em si uma intrínseca complexidade pois, em muitos casos, os fatores ou dados necessários  para a reprodução do problema são mais complexos de se obter ou simular do que muitas vezes corrigir o problema priopriamente dito.
 
-O programador, com base nas informações de uma incidência, reunir dados para a reprodução, corrigir e evidênciar que essas correções estão de acordo com o comportamento adequado para a funcionalidade proposta.
+O programador, com base nas informações de uma incidência, precisa reunir dados para a reproduzir o comportamento informado, corrigir e evidênciar a implementação realizada está de acordo com o comportamento previsto para a funcionalidade proposta.
 
 O analista ou testador, a partir dos dados disponíveis para a reprodução do problema irá verificar a correção realizada, em caso de aprovação, irá para o ambiente de produção, caso contrário, uma nova tarefa será criada para corrigí-la.
 
@@ -265,7 +265,7 @@ Deste modo, com base em uma média de base histórica, a estimativa para cada pr
 	\item \textbf{Administrador de Sistemas}: 2 horas
 \end{itemize}
 
-\subsection{Questão 5}\label{sec:questao-5}
+\subsection{Questão 5}
 Qual é o valor da hora de trabalho de cada profissional envolvido no processo de resolução de uma incidência?
 
 \subsubsection{Resposta 5}
@@ -283,7 +283,7 @@ Desta forma, temos a partir da média do salário base o valor hora de cada prof
 	\item \textbf{Administrador de Sistemas}: Salário base: R\$ 6.700,00, salário hora: R\$ 27,92.
 \end{itemize}
 
-\subsection{Questão 6}\label{sec:questao-6}
+\subsection{Questão 6}
 Qual é a estimativa de horas gastas para a resolução de uma incidência encontrada?
 
 \subsubsection{Resposta 6}
@@ -295,15 +295,15 @@ A estimativa de horas gasta por uma incidência é resultado da soma das horas t
 	\item Bug: 17 horas
 \end{itemize}
 
-\subsection{Questão 7}\label{sec:questao-7}
+\subsection{Questão 7}
 Qual é a estimativa do total de horas gastas para a resolução das incidências encontradas?
 
 \subsubsection{Resposta 7}
-De acordo com o número de horas estimado por incidência, podemos estimar que, para as \alteracoes~incidências de alterações foram gastas 468 horas, para as \correcoes~incidências de alterações foram gastas 1274 horas e para as 39 incidências de \bugs~foram gastas 663 horas para suas devidas correções.
+De acordo com o número de horas estimado anteriormente por incidência, podemos estimar que, para as \alteracoes~incidências de alterações foram gastas 507 horas, para as \correcoes~incidências de correções foram gastas 1176 horas e para as \bugs~foram incidências de bugs foram gastas 663 horas para suas devidas correções.
 
-Portanto, o total de horas gasta com todas as incidências encontradas foi de 2405 horas.
+Portanto, o total de horas gasta com todas as incidências encontradas foi de 2346 horas.
 
-\subsection{Questão 8}\label{sec:questao-8}
+\subsection{Questão 8}
 Qual é a estimativa do valor gasto para a resolução de uma incidência encontrada?
 
 \subsubsection{Resposta 8}
@@ -315,13 +315,13 @@ A estimativa do valor gasto por uma incidência é resultado da soma do valor ho
 	\item Bug: $(12 * R\$~17,92) +  (3 * R\$~22,92) * (2 * R\$~27,92) = R\$~339,64$.
 \end{itemize}
 
-\subsection{Questão 9}\label{sec:questao-9}
+\subsection{Questão 9}
 Qual é a estimativa do valor total gastos para a resolução das incidências encontradas?
 
 \subsubsection{Resposta 9}
-De acordo com o valor unitário estimado por incidência estimamos que, para as 39 incidências de alterações foram gastos $R\$~9,751,56$ reais, para as 98 incidências de correções foram gastos $R\$~26.260,08$ reais e para as 39 incidências de bugs foram gastos $R\$~13.245,96$ reais.
+De acordo com o valor unitário estimado por incidência estimamos que, para as 39 incidências de alterações foram gastos $R\$~10.450,44$ reais, para as 98 incidências de correções foram gastos $R\$~24.503,92$ reais e para as 39 incidências de bugs foram gastos $R\$~13.245,96$ reais.
 
-Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$~49.257,60$ reais.
+Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$~48.200,32$ reais.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. Considerações finais - o que se pode concluir dos resultados?
@@ -329,7 +329,7 @@ Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$
 \section{Conclusão}
 Com base nos fatos citados, podemos observar que o alto número de incidências encontradas através de análise do repositório, bem como do board de gerenciamento do projeto, evidencia que o uso de uma ferramenta como bugtracker seria mais eficaz para gerenciar este tipo de informação e também, afim de facilitar a obteção de futuras métricas concernente a este projeto.
 
-O custo dos bugs e correções somados é equivalente a 4 meses de salário bruto de um programador da empresa no período citado. 
+O custo dos bugs e correções somados é equivalente a 5,5 meses de salário bruto de um programador da empresa no período citado. O critério para chegar a este número foi resultado do seguinte cálculo: (custo da correções + custo da bugs) / (salário programador) = (R\$ 10.450,44 + R\$ 13.245,96) / R\$4.300,00 = 5,5.
 
 A implementação de testes unitários faria com que o número de correções encontrado em futuras medições fosse drasticamente menor bem como, seria um fator primordial para a implementação de um processo de integração contínua na empresa.
 
