@@ -13,7 +13,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}	
 \usepackage{graphicx,color}
-\usepackage[left=2.0cm,top=2.5cm,right=2.0cm,bottom=2.0cm]{geometry}
+\usepackage[left=1.5cm,top=2.0cm,right=1.5cm,bottom=1.5cm]{geometry}
 \usepackage{enumerate}
 \usepackage{epigraph}
 \usepackage{abntcite}
@@ -210,7 +210,7 @@ Avaliar o processo de desenvolvimento atual através da análise do histórico d
 Qual é o número de incidências encontradas desde o início do projeto até a versão mais atual?
 
 \subsubsection{Resposta}
-Através de uma minuciosa análise do repositório do projeto, entre o período de 17/04/2012 até 13/11/2013 foram encontrado 176 incidências categorizadas como \textit{alterações}, \textit{correções} e \textit{bugs}, estando eles divididos da seguinte forma:
+Através de uma minuciosa análise do repositório do projeto, entre o período de 17/04/2012 até 13/11/2013 foram encontradas 176 incidências categorizadas como \textit{alterações}, \textit{correções} e \textit{bugs}, estando eles divididos da seguinte forma:
 
 \newcommand{\alteracoes}{39}
 \newcommand{\correcoes}{98}
@@ -305,9 +305,9 @@ A estimativa de horas gasta por uma incidência é resultado da soma das horas t
 Qual é a estimativa do total de horas gastas para a resolução das incidências encontradas?
 
 \subsubsection{Resposta 7}
-De acordo com o número de horas estimado anteriormente por incidência, podemos estimar que, para as \alteracoes~incidências de alterações foram gastas 507 horas, para as \correcoes~incidências de correções foram gastas 1176 horas e para as \bugs~foram incidências de bugs foram gastas 663 horas para suas devidas correções.
+De acordo com o número de horas estimado anteriormente por incidência, podemos estimar que, para as \alteracoes~incidências de alterações foram gastas 468 horas, para as \correcoes~incidências de correções foram gastas 1274 horas e para as \bugs~foram incidências de bugs foram gastas 663 horas para suas devidas correções.
 
-Portanto, o total de horas gasta com todas as incidências encontradas foi de 2346 horas.
+Portanto, o total de horas gasta com todas as incidências encontradas foi de 2405 horas.
 
 \subsection{Questão 8}
 Qual é a estimativa do valor gasto para a resolução de uma incidência encontrada?
@@ -325,9 +325,9 @@ A estimativa do valor gasto por uma incidência é resultado da soma do valor ho
 Qual é a estimativa do valor total gastos para a resolução das incidências encontradas?
 
 \subsubsection{Resposta 9}
-De acordo com o valor unitário estimado por incidência estimamos que, para as 39 incidências de alterações foram gastos $R\$~10.450,44$ reais, para as 98 incidências de correções foram gastos $R\$~24.503,92$ reais e para as 39 incidências de bugs foram gastos $R\$~13.245,96$ reais.
+De acordo com o valor unitário estimado por incidência estimamos que, para as 39 incidências de alterações foram gastos $R\$~9.751,56$ reais, para as 98 incidências de correções foram gastos $R\$~26.260,08$ reais e para as 39 incidências de bugs foram gastos $R\$~13.245,96$ reais.
 
-Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$~48.200,32$ reais.
+Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$~49.257,60$ reais.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 4. Considerações finais - o que se pode concluir dos resultados?
@@ -335,13 +335,13 @@ Portanto, o valor total gasta com todas as incidências encontradas foi de  $R\$
 \section{Conclusão}
 Com base nos fatos citados, podemos observar que o alto número de incidências encontradas através de análise do repositório, bem como do board de gerenciamento do projeto, evidencia que o uso de uma ferramenta como bugtracker seria mais eficaz para gerenciar este tipo de informação e também, afim de facilitar a obteção de futuras métricas concernente a este projeto.
 
-O custo dos bugs e correções somados é equivalente a 5,5 meses de salário bruto de um programador da empresa no período citado. O critério para chegar a este número foi resultado do seguinte cálculo: (custo da correções + custo da bugs) / (salário programador) = (R\$ 10.450,44 + R\$ 13.245,96) / R\$4.300,00 = 5,5.
+O custo dos bugs e correções somados é equivalente a 9,2 meses de salário bruto de um programador da empresa no período citado. O critério para chegar a este número foi resultado do seguinte cálculo: (custo da correções + custo da bugs) / (salário programador) = (R\$ 26.260,08 + R\$ 13.245,96) / R\$4.300,00 = 9,2.
 
 A implementação de testes unitários faria com que o número de correções encontrado em futuras medições fosse drasticamente menor bem como, seria um fator primordial para a implementação de um processo de integração contínua na empresa.
 
 O uso de integração contínua na empresa faria com que o processo de deploy que, atualmente demora em torno de 2 horas fosse diminuido para em alguns meros minutos, tirando o fator humano interente ao procedimento. Desta forma, o tempo estimado gasto pelos administradores de sistema com o deploy das 176 incidências foram de 352 horas com um custo de R\$ 9.827,84 seria a economia que teríamos para a empresa com tal implementação.
 
-As incidências referente a bugs e correções encontradas evidenciam que a necessidade de uma necessidade de melhor treinamento aos responsáveis pela execução dos testes atualmente ou, a criação de uma equipe independente para tal, visto que, o testador é o próprio analista de negócio, que não possui esta especialidade.
+O percentual de bugs em relação a soma dos bugs e correções é de 28,47\%. Isto significa que quase 1 em cada 3 erros não são detectados na fase de testes e sim em produção. Isto evidencia a necessidade de melhor treinamento aos responsáveis pela execução dos testes atualmente ou, a criação de uma equipe independente para tal, visto que, o testador é o próprio analista de negócio, que não possui esta especialidade.
 
 \subsection{Trabalhos Futuros}
 Este trabalho poderia ser repetido futuramente com a aplicação das melhorias propostas sugeridas na conclusão deste trabalho afim de levantar novas métricas evidenciando as conclusões obtidas.
